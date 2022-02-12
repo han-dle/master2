@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
+const PREFIX = 'handle-master-2-'
+
 export const useLocalStorage = <Type,>(key: string, initialValue: Type): [Type, any] => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = window.localStorage.getItem(key)
+      const item = window.localStorage.getItem(PREFIX + key)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
       console.log(error)
@@ -14,13 +16,13 @@ export const useLocalStorage = <Type,>(key: string, initialValue: Type): [Type, 
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value
       setStoredValue(valueToStore)
-      window.localStorage.setItem(key, JSON.stringify(valueToStore))
+      window.localStorage.setItem(PREFIX + key, JSON.stringify(valueToStore))
     } catch (error) {
       console.log(error)
     }
   }
 
-  window.localStorage.setItem(key, JSON.stringify(storedValue))
+  window.localStorage.setItem(PREFIX + key, JSON.stringify(storedValue))
 
   return [storedValue, setValue]
 }
