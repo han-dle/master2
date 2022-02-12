@@ -44,14 +44,14 @@ function App() {
     answer: () => getRandomAnswer(),
     gameState: state.playing,
     board: [
-      ['', '', '', '', ''],
-      ['', '', '', '', ''],
-      ['', '', '', '', ''],
-      ['', '', '', '', ''],
-      ['', '', '', '', ''],
-      ['', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
+      ['', '', '', '', '', ''],
     ],
-    cellStatuses: Array(6).fill(Array(5).fill(status.unguessed)),
+    cellStatuses: Array(6).fill(Array(6).fill(status.unguessed)),
     currentRow: 0,
     currentCol: 0,
     letterStatuses: () => {
@@ -153,21 +153,21 @@ function App() {
   const addLetter = (letter: string) => {
     setSubmittedInvalidWord(false)
     setBoard((prev: string[][]) => {
-      if (currentCol > 4) {
+      if (currentCol > 5) {
         return prev
       }
       const newBoard = [...prev]
       newBoard[currentRow][currentCol] = letter
       return newBoard
     })
-    if (currentCol < 5) {
+    if (currentCol < 6) {
       setCurrentCol((prev: number) => prev + 1)
     }
   }
 
   // returns an array with a boolean of if the word is valid and an error message if it is not
   const isValidWord = (word: string): [boolean] | [boolean, string] => {
-    if (word.length < 5) return [false, `please enter a 5 letter word`]
+    if (word.length < 6) return [false, `please enter a 6 letter word`]
     if (difficultyLevel === difficulty.easy) return [true]
     if (!words[word.toLowerCase()]) return [false, `${word} is not a valid word. Please try again.`]
     if (difficultyLevel === difficulty.normal) return [true]
@@ -376,7 +376,7 @@ function App() {
             <Settings />
           </button>
           <h1 className="flex-1 text-center text-xl xxs:text-2xl sm:text-4xl tracking-wide font-bold font-righteous">
-            코드 마스터 5
+            한들 마스터 2
           </h1>
           <button
             type="button"
@@ -388,7 +388,7 @@ function App() {
         </header>
         <div className="flex items-center flex-col py-3 flex-1 justify-center relative">
           <div className="relative">
-            <div className="grid grid-cols-5 grid-flow-row gap-4">
+            <div className="grid grid-cols-6 grid-flow-row gap-3">
               {board.map((row: string[], rowNumber: number) =>
                 row.map((letter: string, colNumber: number) => (
                   <span

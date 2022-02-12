@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import App from './App'
 
-test('renders the 코드 마스터 5 title', () => {
+test('renders the 한들 마스터 2 title', () => {
   render(<App />)
-  const title = screen.getByText(/코드 마스터 5/i)
+  const title = screen.getByText(/한들 마스터 2/)
   expect(title).toBeInTheDocument()
 })
