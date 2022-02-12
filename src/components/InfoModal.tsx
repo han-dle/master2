@@ -26,7 +26,7 @@ export const InfoModal = ({ isOpen, handleClose, darkMode, styles }: Props) => (
           <ul className="list-disc pl-5 block sm:text-base text-sm">
             <li className="mt-6 mb-2">두 글자 정답을 맞히기 위한 6번의 기회가 주어집니다.</li>
             <li className="mb-2">말이 되는 단어를 적어주세요.</li>
-            <li className="mb-2">받침이 비었을 때는 '☒'를 입력합니다.</li>
+            <li className="mb-2">받침이 비었을 때는 '⬜'를 입력합니다.</li>
             <li className="mb-2">
               답을 제출한 뒤, 각 글자가 초록, 노랑, 회색 중 하나로 변합니다.
             </li>
