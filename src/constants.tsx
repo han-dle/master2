@@ -1,9 +1,9 @@
 export const keyboardLetters = [
   'ㄳㄵㄶㄺㄻㄼㄽㄾㄿㅀㅄ'.split(''),
-  'ㅃㅉㄸㄲㅆㅟㅝㅚㅙㅒㅖ'.split(''),
+  'ㅃㅉㄸㄲㅆㅚㅙㅟㅞㅒㅖ'.split(''),
   'ㅂㅈㄷㄱㅅㅛㅕㅑㅐㅔ'.split(''),
   'ㅁㄴㅇㄹㅎㅗㅘㅓㅏㅣ⬜'.split(''),
-  'ㅋㅌㅊㅍㅠㅜㅞㅡㅢ'.split(''),
+  'ㅋㅌㅊㅍㅠㅜㅝㅡㅢ'.split(''),
 ]
 
 export const letters = [
